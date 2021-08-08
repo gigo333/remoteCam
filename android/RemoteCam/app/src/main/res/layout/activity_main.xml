@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Enter server IP adress!"
+            android:textSize="20sp"></TextView>
+
+        <TableRow
+            android:layout_width="412dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/IP1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:keepScreenOn="false"
+                android:keyboardNavigationCluster="false"
+                android:maxLength="3"
+                android:text="93"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:text="."
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/IP2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:keyboardNavigationCluster="false"
+                android:maxLength="3"
+                android:text="50"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:text="."
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/IP3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:keyboardNavigationCluster="false"
+                android:maxLength="3"
+                android:text="231"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:text="."
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/IP4"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:keyboardNavigationCluster="false"
+                android:maxLength="3"
+                android:text="147"
+                android:textAlignment="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="42dp" />
+
+        <Button
+            android:id="@+id/enableCamera"
+            android:layout_width="414dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="Open Camera" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
