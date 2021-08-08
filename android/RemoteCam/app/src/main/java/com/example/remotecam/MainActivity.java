@@ -3,7 +3,9 @@ package com.example.remotecam;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -35,9 +37,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (hasCameraPermission()) {
-                    enableCamera();
+                    if(hasWriteSettingsPermission()) {
+                        enableCamera();
+                    } else {
+                        notifyWriteSettingsPermission();
+                    }
                 } else {
-                    requestPermission();
+                    requestCameraPermission();
                 }
             }
         });
@@ -50,12 +56,24 @@ public class MainActivity extends AppCompatActivity {
         ) == PackageManager.PERMISSION_GRANTED;
     }
 
-    private void requestPermission() {
+    private boolean hasWriteSettingsPermission(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return Settings.System.canWrite(this);
+        } else {
+            return true;
+        }
+    }
+
+    private void requestCameraPermission() {
         ActivityCompat.requestPermissions(
                 this,
                 CAMERA_PERMISSION,
                 CAMERA_REQUEST_CODE
         );
+    }
+
+    private void notifyWriteSettingsPermission(){
+        Toast.makeText(this, "Write settings permission not granted", Toast.LENGTH_LONG).show();;
     }
 
     private void enableCamera() {
