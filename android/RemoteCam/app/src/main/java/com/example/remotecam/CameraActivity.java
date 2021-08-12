@@ -1,9 +1,12 @@
 package com.example.remotecam;
 
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.ImageFormat;
 import android.graphics.Rect;
 import android.graphics.YuvImage;
 import android.media.Image;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -28,6 +31,8 @@ import com.google.common.util.concurrent.ListenableFuture;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.ExecutionException;
 
 public class CameraActivity extends AppCompatActivity {
@@ -59,6 +64,7 @@ public class CameraActivity extends AppCompatActivity {
         //textView = findViewById(R.id.orientation);
         String address=getIntent().getStringExtra("ip_address");
         sendThread = new SendThread(address, 10000, size.getHeight(), size.getWidth());
+        sendThread.setBatteryStatus(getBattery_percentage());
         sendThread.start();
         cameraProviderFuture.addListener(new Runnable() {
             @Override
@@ -71,6 +77,16 @@ public class CameraActivity extends AppCompatActivity {
                 }
             }
         }, ContextCompat.getMainExecutor(this));
+
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                sendThread.setBatteryStatus(getBattery_percentage());
+            }
+        };
+        Timer timer =new Timer();
+        timer.scheduleAtFixedRate(task, 250, 250);
+
     }
 
 
@@ -143,6 +159,25 @@ public class CameraActivity extends AppCompatActivity {
         byte[] imageBytes = out.toByteArray();
         return imageBytes;
         //return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+    }
+
+    private int getBattery_percentage()
+    {
+        IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        Intent batteryStatus = getApplicationContext().registerReceiver(null, ifilter);
+        int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+        int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+        float batteryPct = level / (float)scale;
+        float p = batteryPct * 100;
+
+        int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+        boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
+                status == BatteryManager.BATTERY_STATUS_FULL;
+
+        int val= isCharging ? 1 : 0;
+
+        return val+2*Math.round(p);
+
     }
 
 }

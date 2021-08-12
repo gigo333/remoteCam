@@ -58,6 +58,7 @@ sc.bind((address,PORT))
 controlThread = threading.Thread(target=controlHandler)
 controlThread.daemon=True
 controlThread.start()
+oldBatteryStatus=0
 while(1):
     sc.listen(1)
     so, addr= sc.accept()
@@ -87,7 +88,17 @@ while(1):
             while(l!=4):
                 b+=so.recv(4-l)
                 l=len(b)
-                
+                    
+            batteyStatus=struct.unpack(">i", b)[0]
+            if(batteyStatus!=oldBatteryStatus):
+                print("Battery","Level: "+str(batteyStatus//2), "Charging: "+str(batteyStatus%2))
+                oldBatteryStatus=batteyStatus
+             
+            b=so.recv(4)
+            l=len(b)
+            while(l!=4):
+                b+=so.recv(4-l)
+                l=len(b)   
             length=struct.unpack(">i", b)[0]
             buffer=so.recv(length)
             l=len(buffer)

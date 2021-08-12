@@ -24,12 +24,14 @@ public class SendThread  extends Thread {
     private CameraControl cameraControl;
     private boolean torchEnabled;
     private int zoom;
+    private int batteryStatus;
 
     public SendThread(String address, int port, int height, int width){
         this.address=address;
         this.port=port;
         this.height=height;
         this.width=width;
+        batteryStatus=0;
         connected=false;
         running=false;
         buffer = null;
@@ -86,9 +88,11 @@ public class SendThread  extends Thread {
             if(buffer!=null){
                 byte toSend[]= buffer.clone();
                 byte[] sendLen = ByteBuffer.allocate(4).putInt(toSend.length).array();
+                byte[] sendBatteryStatus= ByteBuffer.allocate(4).putInt(batteryStatus).array();
                 buffer=null;
                 try {
                     //Log.v(TAG, String.valueOf(toSend.length));
+                    so.getOutputStream().write(sendBatteryStatus);
                     so.getOutputStream().write(sendLen);
                     so.getOutputStream().write(toSend);
                     so.getOutputStream().flush();
@@ -156,5 +160,9 @@ public class SendThread  extends Thread {
                 }
             }
         }
+    }
+    public void setBatteryStatus(int batteryStatus){
+        if(this.batteryStatus!=batteryStatus)
+            this.batteryStatus=batteryStatus;
     }
 }

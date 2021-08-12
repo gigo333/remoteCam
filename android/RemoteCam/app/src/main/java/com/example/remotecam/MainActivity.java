@@ -2,10 +2,13 @@ package com.example.remotecam;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -16,6 +19,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class MainActivity extends AppCompatActivity {
     private static final String[] CAMERA_PERMISSION = new String[]{Manifest.permission.CAMERA};
@@ -24,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Button enableCamera = findViewById(R.id.enableCamera);
         ip1=findViewById(R.id.IP1);
         ip2=findViewById(R.id.IP2);
@@ -47,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     private boolean hasCameraPermission() {
@@ -102,4 +109,5 @@ public class MainActivity extends AppCompatActivity {
         else
             return true;
     }
+
 }
