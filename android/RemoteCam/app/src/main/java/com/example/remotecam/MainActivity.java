@@ -2,15 +2,11 @@ package com.example.remotecam;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,9 +14,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 public class MainActivity extends AppCompatActivity {
