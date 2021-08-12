@@ -1,0 +1,6 @@
+com\mycompany\remotecam\RecvThread.class
+module-info.class
+com\mycompany\remotecam\SecondaryController.class
+com\mycompany\remotecam\PrimaryController.class
+com\mycompany\remotecam\SerialComm.class
+com\mycompany\remotecam\App.class

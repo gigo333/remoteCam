@@ -1,0 +1,54 @@
+@options
+@argfile
+--class-path
+'C:/Users/user/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13.jar;C:/Users/user/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13.jar;C:/Users/user/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13.jar;C:/Users/user/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13.jar'
+--module-path
+'C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/target/RemoteCam-1.0-SNAPSHOT.jar;C:/Users/user/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13-win.jar;C:/Users/user/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13-win.jar;C:/Users/user/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13-win.jar;C:/Users/user/.m2/repository/com/fazecast/jSerialComm/2.5.3/jSerialComm-2.5.3.jar;C:/Users/user/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13-win.jar'
+--patch-module
+com.mycompany.remotecam='C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/src/main/java;C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/target/generated-sources/annotations'
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+--module-source-path
+'C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/target/apidocs/src'
+-author
+-bottom
+'Copyright &#169; 2021. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'RemoteCam 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' 'C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'RemoteCam 1.0-SNAPSHOT API'
+'C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/src/main/java/com/mycompany/remotecam/App.java'
+'C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/src/main/java/com/mycompany/remotecam/PrimaryController.java'
+'C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/src/main/java/com/mycompany/remotecam/RecvThread.java'
+'C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/src/main/java/com/mycompany/remotecam/SecondaryController.java'
+'C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/src/main/java/com/mycompany/remotecam/SerialComm.java'
+'C:/Users/user/OneDrive/Documenti/NetBeansProjects/RemoteCam/src/main/java/module-info.java'
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\allclasses-index.html = 1628775690908
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\allpackages-index.html = 1628775690910
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\element-list = 1628775690839
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\help-doc.html = 1628775690931
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\index-all.html = 1628775690926
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\index.html = 1628775690928
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\jquery-ui.overrides.css = 1628775691060
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\member-search-index.js = 1628775690914
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\module-search-index.js = 1628775690911
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\overview-tree.html = 1628775690897
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\package-search-index.js = 1628775690912
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\script.js = 1628775690936
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\search.js = 1628775690938
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\stylesheet.css = 1628775690934
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\tag-search-index.js = 1628775690915
+C:\Users\user\OneDrive\Documenti\NetBeansProjects\RemoteCam\target\apidocs\type-search-index.js = 1628775690913

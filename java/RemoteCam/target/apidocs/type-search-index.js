@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.mycompany.remotecam","l":"App"},{"p":"com.mycompany.remotecam","l":"PrimaryController"},{"p":"com.mycompany.remotecam","l":"RecvThread"},{"p":"com.mycompany.remotecam","l":"SecondaryController"},{"p":"com.mycompany.remotecam","l":"SerialComm"}];updateSearchResults();
